@@ -17,6 +17,7 @@ class Poll(models.Model):
     """A simple poll"""
     title = models.CharField(_('title'), max_length=250)
     description = models.TextField(_('description'), blank=True)
+    open_response = models.BooleanField(_('open response'))
 
     slug = models.SlugField(_('slug'))
     creator = models.ForeignKey(User, verbose_name=_('creator'))
@@ -74,7 +75,10 @@ class Choice(models.Model):
 class Vote(models.Model):
     """A vote for a poll"""
     poll = models.ForeignKey(Poll, verbose_name=_('poll'))
-    choice = models.ForeignKey(Choice, verbose_name=_('choice'))
+    choice = models.ForeignKey(Choice, verbose_name=_('choice'),
+                               blank=True, null=True)
+    comment = models.CharField(_('comment'), max_length=250,
+                               blank=True)
 
     voter = models.ForeignKey(User, verbose_name=_('voter'),
                               blank=True, null=True)
