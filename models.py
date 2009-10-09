@@ -75,8 +75,7 @@ class Choice(models.Model):
 class Vote(models.Model):
     """A vote for a poll"""
     poll = models.ForeignKey(Poll, verbose_name=_('poll'))
-    choice = models.ForeignKey(Choice, verbose_name=_('choice'),
-                               blank=True, null=True)
+    choice = models.ForeignKey(Choice, verbose_name=_('choice'))
     comment = models.CharField(_('comment'), max_length=250,
                                blank=True)
 
