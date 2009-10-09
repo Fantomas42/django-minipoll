@@ -1,0 +1,51 @@
+9
+
+dir
+0
+http://veliberator.willbreak.it/svn/trunk/templates/minipoll
+http://veliberator.willbreak.it/svn
+add
+
+
+
+
+
+
+
+svn:special svn:externals svn:needs-lock
+
+poll_list.html
+file
+
+
+
+add
+
+poll_detail_result.html
+file
+
+
+
+add
+
+poll_detail.html
+file
+
+
+
+add
+
+base.html
+file
+
+
+
+add
+
+tags
+dir
+
+
+
+add
+

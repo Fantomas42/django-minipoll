@@ -1,0 +1,13 @@
+<div id="poll_form">
+  <form action="{% url minipoll_poll_vote poll.slug %}" method="post" name="poll">
+    <table class="choices">
+      {% for choice in poll.choice_set.all %}
+      <tr>
+	<td><input type="radio" name="choice" value="{{ choice.pk }}" /></td>
+	<td>{{ choice.title }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  <input type="submit" value="Vote" />
+  </form>
+</div>
