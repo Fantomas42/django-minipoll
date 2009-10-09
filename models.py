@@ -67,9 +67,10 @@ class Choice(models.Model):
     votes.short_description = _('votes')
 
     def percent(self):
-        if not self.poll.votes():
+        poll_votes = self.poll.votes()
+        if not poll_votes:
             return 0.0
-        return float(self.votes()) / float(self.poll.votes()) * 100.0
+        return float(self.votes()) / float(poll_votes) * 100.0
 
 
 class Vote(models.Model):
