@@ -12,8 +12,8 @@ class PollAdmin(admin.ModelAdmin):
     date_hierarchy = 'creation_date'
     search_fields = ('title', 'description', 'slug')
     list_filter = ('status', 'creator', 'publication_date')
-    list_display = ('title', 'status', 'creator', 'open_response', 'votes')
-    fieldsets = ((None, {'fields': ('title', 'description', 'open_response')}),
+    list_display = ('title', 'status', 'creator', 'votes')
+    fieldsets = ((None, {'fields': ('title', 'description',)}),
                  (_('Status'), {'fields': ('slug', 'status', 'publication_date')}),
                  )
     prepopulated_fields = {'slug': ('title',)}
@@ -29,7 +29,7 @@ admin.site.register(Poll, PollAdmin)
 class VoteAdmin(admin.ModelAdmin):
     date_hierarchy = 'creation_date'
     list_filter = ('poll', 'choice', 'voter', 'creation_date')
-    list_display = ('poll', 'choice', 'comment', 'creation_date', 'ip_address', 'voter')
+    list_display = ('poll', 'choice', 'creation_date', 'ip_address', 'voter')
     actions_on_top = False
     actions_on_bottom = True
 
