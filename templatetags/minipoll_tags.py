@@ -16,11 +16,16 @@ def display_poll_result(poll):
 @register.inclusion_tag('minipoll/tags/last_poll.html',
                         takes_context=True)
 def display_last_poll(context):
-    poll = Poll.published.all()[0]
+    polls = Poll.published.all()
+    if not polls:
+        return {}
+
+    poll = polls[0]
     
     session = context['request'].session
     user_has_vote = poll.pk in session.get('poll', [])
     
     return {'poll': poll,
             'user_has_vote': user_has_vote}
+
 
