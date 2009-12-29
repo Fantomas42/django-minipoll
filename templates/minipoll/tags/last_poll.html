@@ -1,4 +1,5 @@
 {% load i18n minipoll_tags %}
+{% if poll %}
 <span class="poll_title">
   <strong>{{ poll.title }}</strong>
 </span>
@@ -42,4 +43,5 @@
     </table>
   </form>
 </div>
+{% endif %}
 {% endif %}
