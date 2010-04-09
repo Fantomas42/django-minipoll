@@ -8,6 +8,8 @@ a mini poll or survey on your website.
 You create a question, you give it some choices, you publish and 
 yours visitors can answer to the question.
 
+.. contents::
+
 Installation
 ============
 

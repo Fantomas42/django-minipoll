@@ -1,0 +1,47 @@
+{% load i18n minipoll_tags %}
+{% if poll %}
+<span class="poll_title">
+  <strong>{{ poll.title }}</strong>
+</span>
+{% if user_has_vote %}
+<div id="poll_result">
+  <table class="choices">
+  {% for choice in poll.choice_set.all %}
+  <tr>
+    <td>{{ choice.title }}</td>
+  </tr>
+  <tr>
+    <td>
+      <img src="/img/poll/result.gif" height="14" width="{{ choice.percent|default:1|floatformat }}" />
+      {{ choice.percent|floatformat:1 }}% ({{ choice.votes }})
+    </td>
+  </tr>
+  {% endfor %}
+  <tr>
+    <td colspan="2">
+      <a href="{% url minipoll_poll_list %}">{% trans "Poll list" %}</a>
+    </td>
+  </tr>
+  </table>
+</div>
+{% else %}
+<div id="poll_form">
+  <form action="{% url minipoll_poll_vote poll.slug %}" method="post" name="poll">
+    <table class="choices">
+      {% for choice in poll.choice_set.all %}
+      <tr>
+	<td><input type="radio" name="choice" value="{{ choice.pk }}" /></td>
+	<td>{{ choice.title }}</td>
+      </tr>
+      {% endfor %}
+      <tr>
+	<td colspan="2">
+	  <input type="submit" value="Voter" />
+	  <a href="{% url minipoll_poll_result poll.slug %}">{{ poll.votes }} {% trans "votes" %}.</a>
+	</td>
+      </tr>
+    </table>
+  </form>
+</div>
+{% endif %}
+{% endif %}
