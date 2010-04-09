@@ -1,5 +1,5 @@
 ===============
-django-minipoll
+Django-Minipoll
 ===============
 
 Django-MiniPoll is a django application who allow you to put 
@@ -16,7 +16,7 @@ Installation
 After having put minipoll in your *PYTHON_PATH*, you only have to register **minipoll** 
 in your *INSTALLED_APPS* section. And register this bundle of urls in project's urls. ::
 
-  (r'^polls/', include('minipoll.urls')),
+  >>> url(r'^polls/', include('minipoll.urls')),
 
 
 Synchronize your database, publish a poll and this is it.
