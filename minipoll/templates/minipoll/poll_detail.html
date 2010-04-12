@@ -21,7 +21,7 @@
     {% display_poll_form object %}
     <p>
       {{ object.votes }} {% trans "votes" %}.
-      <a href="{% url minipoll_poll_result object.slug %}">{% trans "View the results" %}</a>
+      <a href="{% url minipoll_poll_result object.slug %}">{% trans "View the results." %}</a>
     </p>
     {% endif %}
   </div>
