@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sondanal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-27 00:35+0200\n"
-"PO-Revision-Date: 2009-09-27 00:35+0100\n"
+"POT-Creation-Date: 2010-04-12 16:25+0200\n"
+"PO-Revision-Date: 2010-04-12 16:25+0100\n"
 "Last-Translator: Fantomas <Fantomas42@gmail.com>\n"
 "Language-Team: fr <fantomas42@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -35,84 +35,118 @@ msgid "archived"
 msgstr "Archivé"
 
 #: models.py:18
-#: models.py:52
+#: models.py:53
 msgid "title"
 msgstr "titre"
 
 #: models.py:19
-#: models.py:53
+#: models.py:54
 msgid "description"
 msgstr "description"
 
-#: models.py:21
+#: models.py:22
 msgid "slug"
 msgstr "slug"
 
-#: models.py:22
+#: models.py:23
 msgid "creator"
 msgstr "créateur"
 
-#: models.py:23
+#: models.py:24
 msgid "status"
 msgstr "statut"
 
-#: models.py:24
-#: models.py:54
-#: models.py:82
+#: models.py:25
+#: models.py:55
+#: models.py:86
 msgid "creation date"
 msgstr "date de création"
 
-#: models.py:25
+#: models.py:26
 msgid "modification date"
 msgstr "date de modification"
 
-#: models.py:26
+#: models.py:27
 msgid "publication date"
 msgstr "date de publication"
 
-#: models.py:33
+#: models.py:34
 msgid "Poll"
 msgstr "Sondage"
 
-#: models.py:34
+#: models.py:35
 msgid "Polls"
 msgstr "Sondages"
 
-#: models.py:45
-#: models.py:66
+#: models.py:46
+#: models.py:67
+#: templates/minipoll/poll_detail.html:23
+#: templates/minipoll/poll_detail_result.html:17
+#: templates/minipoll/poll_list.html:23
+#: templates/minipoll/tags/last_poll.html:40
 msgid "votes"
 msgstr "votes"
 
-#: models.py:50
-#: models.py:76
+#: models.py:51
+#: models.py:78
 msgid "poll"
 msgstr "sondage"
 
-#: models.py:58
+#: models.py:59
 msgid "Choice"
 msgstr "Proposition"
 
-#: models.py:59
+#: models.py:60
 msgid "Choices"
 msgstr "Propositions"
 
-#: models.py:77
+#: models.py:79
 msgid "choice"
 msgstr "proposition"
 
-#: models.py:79
+#: models.py:83
 msgid "voter"
 msgstr "votant"
 
-#: models.py:81
+#: models.py:85
 msgid "ip address"
 msgstr "Adresse IP"
 
-#: models.py:86
+#: models.py:90
 msgid "Vote"
 msgstr "Vote"
 
-#: models.py:87
+#: models.py:91
 msgid "Votes"
 msgstr "Votes"
+
+#: templates/minipoll/poll_detail.html:17
+msgid "You have already vote to this poll."
+msgstr "Vous avez déjà voté à ce sondage."
+
+#: templates/minipoll/poll_detail.html:24
+msgid "View the results."
+msgstr "Voir les résultats."
+
+#: templates/minipoll/poll_detail_result.html:4
+msgid "Results"
+msgstr "Résultats"
+
+#: templates/minipoll/poll_detail_result.html:6
+msgid "results"
+msgstr "résultats"
+
+#: templates/minipoll/poll_detail_result.html:19
+msgid "Vote to this poll."
+msgstr "Votez à ce sondage."
+
+#: templates/minipoll/poll_list.html:4
+#: templates/minipoll/poll_list.html:9
+msgid "All the polls of the site."
+msgstr "Tout les sondages du site."
+
+#: templates/minipoll/poll_list.html:6
+#: templates/minipoll/tags/last_poll.html:22
+msgid "Poll list"
+msgstr "Sondages"
 
