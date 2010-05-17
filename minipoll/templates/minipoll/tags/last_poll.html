@@ -36,7 +36,7 @@
       {% endfor %}
       <tr>
 	<td colspan="2">
-	  <input type="submit" value="Voter" />
+	  <input type="submit" value="{% trans "Vote" %}" />
 	  <a href="{% url minipoll_poll_result poll.slug %}">{{ poll.votes }} {% trans "votes" %}.</a>
 	</td>
       </tr>

@@ -1,3 +1,4 @@
+{% load i18n %}
 <div id="poll_form">
   <form action="{% url minipoll_poll_vote poll.slug %}" method="post" id="poll">
     <table class="choices">
@@ -8,6 +9,6 @@
       </tr>
       {% endfor %}
     </table>
-  <input type="submit" value="Vote" />
+  <input type="submit" value="{% trans "Vote" %}" />
   </form>
 </div>
