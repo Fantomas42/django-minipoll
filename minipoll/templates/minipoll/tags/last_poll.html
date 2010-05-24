@@ -26,7 +26,7 @@
 </div>
 {% else %}
 <div id="poll_form">
-  <form action="{% url minipoll_poll_vote poll.slug %}" method="post" name="poll">
+  <form action="{% url minipoll_poll_vote poll.slug %}" method="post">
     <table class="choices">
       {% for choice in poll.choice_set.all %}
       <tr>
