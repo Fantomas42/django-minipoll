@@ -22,8 +22,11 @@ def display_last_poll(context):
 
     poll = polls[0]
     
-    session = context['request'].session
-    user_has_vote = poll.pk in session.get('poll', [])
+    try:
+        session = context['request'].session
+        user_has_vote = poll.pk in session.get('poll', [])
+    except KeyError:
+        user_has_vote = False
     
     return {'poll': poll,
             'user_has_vote': user_has_vote}
