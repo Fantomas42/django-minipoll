@@ -54,8 +54,13 @@ class Choice(models.Model):
     description = models.TextField(_('description'), blank=True)
     creation_date = models.DateTimeField(_('creation date'), auto_now_add=True)
 
+    is_active = models.BooleanField(_('is active'), default=True,
+                                    help_text=_('If you want to disable this choice.'))
+    display_priority = models.IntegerField(_('display priority'), default=100,
+                                           help_text=_('Used to ordonnate the choices.'))
+
     class Meta:
-        ordering = ('creation_date',)
+        ordering = ('-display_priority', 'creation_date',)
         verbose_name = _('Choice')
         verbose_name_plural = _('Choices')
 
